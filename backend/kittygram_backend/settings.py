@@ -10,16 +10,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-if SECRET_KEY is None:
-    SECRET_KEY = get_random_secret_key()
-
 DEBUG = False
 
 unparsed_hosts = os.getenv('ALLOWED_HOSTS')
-if unparsed_hosts is None:
-    ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1', 'localhost']
-else:
-    ALLOWED_HOSTS = str.split(unparsed_hosts, ', ')
+
+ALLOWED_HOSTS = str.split(unparsed_hosts, ', ')
 
 INSTALLED_APPS = [
     'django.contrib.admin',
