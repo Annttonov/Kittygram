@@ -1,6 +1,7 @@
 name: main kittygram workflow
 
 on:
+  workflow_dispatch:
   push:
 
 jobs:
